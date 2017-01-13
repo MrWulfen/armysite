@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form >
+        <h:panelGrid>
+            Page de Création d'une nouvelle figurine...
+            <h:outputLabel for="FigurineName">Nom de la figurine :</h:outputLabel>
+            <h:inputText id="FigurineName" value="#{figurineController.figurine.name}" required="true"></h:inputText>
+
+            <h:outputLabel for="FigurineDesc">Description de la figurine :</h:outputLabel>
+            <h:inputText id="FigurineDesc" value="#{figurineController.figurine.description}" required="false"></h:inputText>
+
+            <h:outputLabel for="FigurineMove">Mouvement de la figurine :</h:outputLabel>
+            <h:inputText id="FigurineMove" value="#{figurineController.figurine.move}" required="true"></h:inputText>
+
+            <h:outputLabel for="FigurineSave">Sauvegarde de la figurine :</h:outputLabel>
+            <h:inputText id="FigurineSave" value="#{figurineController.figurine.save}" required="true"></h:inputText>
+
+            <h:outputLabel for="FigurinePV">Points de vie de la figurine :</h:outputLabel>
+            <h:inputText id="FigurinePV" value="#{figurineController.figurine.PV}" required="true"></h:inputText>
+
+            <h:outputLabel for="FigurineBravery">Bravoure de la figurine :</h:outputLabel>
+            <h:inputText id="FigurineBravery" value="#{figurineController.figurine.bravery}" required="true"></h:inputText>
+
+            <h:outputLabel for="FigurinePrice">Points de la figurine :</h:outputLabel>
+            <h:inputText id="FigurinePrice" value="#{figurineController.figurine.points}" required="true"></h:inputText>
+
+            <h:commandButton value="Envoi" action="#{figurineController.doAddFigurine}"/>
+        </h:panelGrid>
+    </h:form>
+</f:view>
+</html>

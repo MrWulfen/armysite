@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <h:outputStylesheet library="css" name="Tables.css"  />
+</h:head>
+
+<h:body >
+    <h:form>
+    <h:inputText name="SearchBar" id="SearchBar" a:placeholder="Search" value="#{figurineController.searchStr}" required="true"/>
+    <h:commandButton value="Find" action="#{figurineController.doGetFigurinesByName()}"/>
+    </h:form>
+    <h:form>
+        <f:verbatim><hr/></f:verbatim>
+    </h:form>
+    <h:form>
+    <h:dataTable id="Toto" value="#{figurineController.doGetAllFigurine()}" var="mistery"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row">
+        <h:column>
+            <f:facet name="header">Figurine Name</f:facet>
+            <h:commandLink action="Figurine" value="#{mistery.name}" >
+                <f:param name="id" value="#{mistery.id}"/>
+            </h:commandLink>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Description</f:facet>
+            <h:outputLabel value="#{mistery.description}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Move</f:facet>
+            <h:outputLabel value="#{mistery.move}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Save</f:facet>
+            <h:outputLabel value="#{mistery.save}"/>+
+        </h:column>
+        <h:column>
+            <f:facet name="header">PV</f:facet>
+            <h:outputLabel value="#{mistery.PV}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Bravery</f:facet>
+            <h:outputLabel value="#{mistery.bravery}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Points</f:facet>
+            <h:outputLabel value="#{mistery.points}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Add To Cart</f:facet>
+            <h:form>
+                <h:commandButton value="Add" action="#{armyController.army.addArmyLine(mystery, 1)}"/>
+            </h:form>
+        </h:column>
+
+    </h:dataTable>
+    </h:form>
+</h:body>
+</html>

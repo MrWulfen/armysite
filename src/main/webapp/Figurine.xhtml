@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form >
+        <h:panelGrid>
+            Page d'une figurine :
+            <h:outputLabel id="FigurineName" value="#{figurineController.doGetFigurineById(param['id']).name}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurineDesc" value="#{figurineController.doGetFigurineById(param['id']).description}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurineMove" value="#{figurineController.doGetFigurineById(param['id']).move}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurineSave" value="#{figurineController.doGetFigurineById(param['id']).save}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurinePV" value="#{figurineController.doGetFigurineById(param['id']).PV}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurineBravery" value="#{figurineController.doGetFigurineById(param['id']).bravery}" ></h:outputLabel>
+
+            <h:outputLabel id="FigurinePoints" value="#{figurineController.doGetFigurineById(param['id']).points}"></h:outputLabel>
+        </h:panelGrid>
+    </h:form>
+</f:view>
+</html>
